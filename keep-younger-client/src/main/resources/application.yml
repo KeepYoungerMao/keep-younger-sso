@@ -1,0 +1,37 @@
+# keep younger client properties
+server:
+  port: 10000
+  servlet:
+    context-path: /
+  session:
+    cookie:
+      name: KY_AUTH
+spring:
+  application:
+    name: keep-younger-client
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/keep_younger?characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+  thymeleaf:
+    cache: false
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  type-aliases-package: com.dayi.entity
+  configuration:
+    # can get id while saving data
+    use-generated-keys: true
+
+security:
+  oauth2:
+    client:
+      client-id: mao_client_id_1
+      client-secret: secret
+      access-token-uri: http://localhost:11000/ky/oauth/token
+      user-authorization-uri: http://localhost:11000/ky/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:11000/ky/api/user
