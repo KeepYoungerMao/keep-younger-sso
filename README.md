@@ -1,5 +1,5 @@
 # Keep Younger 
-# DEMO for OAuth2 SSO project
+# DEMO for Spring Cloud project
 
 ---
 
@@ -29,3 +29,13 @@
       负载均衡 api服务的转接  
       ribbon的转接服务也可直接嵌入到 keep-younger-client 中  
       单独立项目可为多个api服务转接
+      
+# START
+#### start redis first, and start in sequence projects:
+#### 先启动redis，再依次启动项目:
+* keep-younger-zone
+* keep-younger-service-one
+* keep-younger-service-two
+* keep-younger-ribbon
+* keep-younger-server
+* keep-younger-client
