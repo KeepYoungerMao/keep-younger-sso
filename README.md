@@ -39,3 +39,9 @@
 * keep-younger-ribbon
 * keep-younger-server
 * keep-younger-client
+
+# TEST
+* 浏览器打开：http://127.0.0.1:9000 注册中心
+* 浏览器打开：http://127.0.0.1:1000 客户端
+* 点击 src 会跳转至登陆服务【admin、admin】
+* 登陆成功后跳转至 src，点击按钮进行测试。
