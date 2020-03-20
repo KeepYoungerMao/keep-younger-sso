@@ -1,5 +1,6 @@
 package com.mao.web;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ public class CommonController {
     }
 
     @RequestMapping("src")
+    @PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
     public String securedPage(Model model, Principal principal){
         model.addAttribute("user",principal.getName());
         return "src";

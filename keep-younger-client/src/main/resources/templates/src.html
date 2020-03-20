@@ -8,7 +8,27 @@
 
 <body>
 <h1>SRC PAGE</h1>
-<h1>[[${user}]]</h1>
+<h1>current login user is : <span>[[${user}]]</span></h1>
+<br>
+<hr>
+<p>now let us test how ribbon-service working </p>
+<button onclick="startTest()">start test</button>
+<div id="result"></div>
 </body>
-
+<script src="../static/js/jquery-1.11.3.js"></script>
+<script>
+    var url = "http://127.0.0.1:20000/api/ok";
+    function startTest() {
+        $("#result").empty();
+        for(var i = 0; i < 20; i++){
+            $.ajax({
+                url: url,
+                type: "get",
+                success: function (data) {
+                    $("#result").append('<p>'+data+'</p>');
+                }
+            });
+        }
+    }
+</script>
 </html>

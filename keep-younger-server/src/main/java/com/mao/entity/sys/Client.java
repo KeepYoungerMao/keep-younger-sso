@@ -18,17 +18,17 @@ import java.util.Set;
 public class Client implements ClientDetails {
 
     private String clientId;                            //客户端id
-    private String clientSecret;                        //
-    private Set<String> resourceIds;                    //
+    private String clientSecret;                        //客户端secret
+    private Set<String> resourceIds;                    //资源id
     private boolean secretRequired;                     //
     private boolean scoped;                             //
     private Set<String> scope;                          //
     private Set<String> authorizedGrantTypes;           //
     private Set<String> registeredRedirectUri;          //
-    private List<GrantedAuthority> authorities;         //
-    private Integer accessTokenValiditySeconds;         //
-    private Integer refreshTokenValiditySeconds;        //
-    private Map<String, Object> additionalInformation;  //
+    private List<GrantedAuthority> authorities;         //权限
+    private Integer accessTokenValiditySeconds;         //token有效时间
+    private Integer refreshTokenValiditySeconds;        //token刷新有效时间
+    private Map<String, Object> additionalInformation;  //额外参数
 
     @Override
     public boolean isAutoApprove(String s) {

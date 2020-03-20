@@ -3,6 +3,9 @@ server:
   port: 11000
   servlet:
     context-path: /ky
+  session:
+    cookie:
+      name: KY_AUTH
 spring:
   application:
     name: keep-younger-server
@@ -22,3 +25,8 @@ mybatis:
   configuration:
     # can get id while saving data
     use-generated-keys: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9000/eureka/

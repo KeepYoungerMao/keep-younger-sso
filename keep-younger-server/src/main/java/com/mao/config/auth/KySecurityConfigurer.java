@@ -40,6 +40,7 @@ public class KySecurityConfigurer extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage("/login")
+                .failureUrl("/login?error=true")
                 .and()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
@@ -50,6 +51,7 @@ public class KySecurityConfigurer extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(kyUserDetailService);
+        auth.userDetailsService(kyUserDetailService)
+                .passwordEncoder(passwordEncoder());
     }
 }

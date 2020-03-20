@@ -64,8 +64,10 @@ public class DefaultSystemService implements SystemService {
         scope.add("all");
         c.setScope(scope);
         Set<String> redirectUri = new TreeSet<>();
-        redirectUri.add("http://localhost:10000/login");
+        redirectUri.add("http://127.0.0.1:10000/login");
         c.setRegisteredRedirectUri(redirectUri);
+        c.setAccessTokenValiditySeconds(7200);
+        c.setRefreshTokenValiditySeconds(7200);
         return c;
     }
 
